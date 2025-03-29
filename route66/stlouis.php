@@ -7,7 +7,7 @@ include("navigation.php");
     <section class="city-header">
         <h2>Discover Chicago, IL</h2>
         <img class="city-img" src="images/chicago.jpg" alt="The Bean Chicago">
-        <p>Explore the vibrant culture and iconic landmarks of the Windy City!</p>
+        <p>Explore the vibrant culture and iconic landmarks of the Windy City.</p>
     </section>
 
     <section class="api-data" id="weather">

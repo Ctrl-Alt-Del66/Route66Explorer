@@ -5,9 +5,9 @@ include("navigation.php");
 
 <main>
     <section class="city-header">
-        <h2>Discover Chicago, IL</h2>
-        <img class="city-img" src="images/chicago.jpg" alt="The Bean Chicago">
-        <p>Explore the vibrant culture and iconic landmarks of the Windy City!</p>
+        <h2>Discover Springfield, IL</h2>
+        <img class="city-img" src="images/springfield-il.jpg" alt="Springfield, IL">
+        <p>Step into the heart of Illinois in Springfield, where history and charm collide!</p>
     </section>
 
     <section class="api-data" id="weather">
@@ -30,9 +30,9 @@ include("navigation.php");
 <script src="js/events.js"></script>
 <script src="js/attractions.js"></script>
 <script>
-    getWeather("Chicago");
-    getEvents("Chicago");
-    getAttractions("Chicago");
+    getWeather("Springfield");
+    getEvents("Springfield, IL");
+    getAttractions("Springfield");
 </script>
 
 <?php

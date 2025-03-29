@@ -11,24 +11,42 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $is_21plus = isset($_POST['is_21plus']) ? 1 : 0;
     $description = $_POST['description'];
 
+
     $stmt = $conn->prepare("INSERT INTO meetup_posts (city, event_type, start_time, end_time, is_21plus, description) VALUES (?, ?, ?, ?, ?, ?)");
     $stmt->bind_param("ssssis", $city, $event_type, $start_time, $end_time, $is_21plus, $description);
     $stmt->execute();
 
-    echo "<p>Meetup successfully created!</p>";
+
+    header("Location: social.php");
+    exit();
 }
 ?>
 
 <main>
-    <section>
+    <section class="form-container">
         <h2>Create a Meetup</h2>
-        <form method="POST">
+        <form method="POST" class="create-form">
             <label for="city">City:</label>
             <select name="city" required>
-                <option value="Chicago">Chicago</option>
-                <option value="St. Louis">St. Louis</option>
-                <option value="Oklahoma City">Oklahoma City</option>
-                <option value="Santa Monica">Santa Monica</option>
+                <option value="Chicago, IL">Chicago, IL</option>
+                <option value="Springfield, IL">Springfield, IL</option>
+                <option value="St. Louis, MO">St. Louis, MO</option>
+                <option value="Joplin, MO">Joplin, MO</option>
+                <option value="Tulsa, OK">Tulsa, OK</option>
+                <option value="Oklahoma City, OK">Oklahoma City, OK</option>
+                <option value="Amarillo, TX">Amarillo, TX</option>
+                <option value="Tucumcari, NM">Tucumcari, NM</option>
+                <option value="Santa Fe, NM">Santa Fe, NM</option>
+                <option value="Albuquerque, NM">Albuquerque, NM</option>
+                <option value="Gallup, NM">Gallup, NM</option>
+                <option value="Holbrook, AZ">Holbrook, AZ</option>
+                <option value="Winona, AZ">Winona, AZ</option>
+                <option value="Flagstaff, AZ">Flagstaff, AZ</option>
+                <option value="Kingman, AZ">Kingman, AZ</option>
+                <option value="Needles, CA">Needles, CA</option>
+                <option value="Barstow, CA">Barstow, CA</option>
+                <option value="San Bernardino, CA">San Bernardino, CA</option>
+                <option value="Los Angeles, CA">Los Angeles, CA</option>
             </select>
 
             <label for="event_type">Event Type:</label>
@@ -52,7 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <label for="description">Description:</label>
             <textarea name="description" required></textarea>
 
-            <button type="submit">Create Meetup</button>
+            <button type="submit" class="submit-btn">Create Meetup</button>
         </form>
     </section>
 </main>
